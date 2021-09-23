@@ -21,5 +21,5 @@ $ sudo sh backup_sapl31_docker.sh
 ### Contribuições
 Este script foi possível graças a:
 * discussão da lista gitec postada em (https://colab.interlegis.leg.br/archives/thread/gitec/como-fazer-backup-sapl-31-docker)
-* Aos esclarecedores vídeos do desenvolvedor @LeandroJatai, postados em (https://www.youtube.com/channel/UCoB82LbfGCMrC3Q68XkJY_A)
-* As respostas precisas do desenvolvedor @edwardoliveira
+* Aos esclarecedores vídeos do desenvolvedor [Leandro Jataí](https://github.com/LeandroJatai), postados no canal do [Youtube do Leandro Jataí](https://www.youtube.com/channel/UCoB82LbfGCMrC3Q68XkJY_A)
+* As respostas precisas do desenvolvedor [Edward Oliveira](https://github.com/edwardoliveira)
