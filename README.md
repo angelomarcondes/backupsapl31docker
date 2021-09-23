@@ -14,6 +14,7 @@ O objetivo deste projeto é oferecer scripts para o backup e a restauração dos
 # Dê permissão de execução ao script 
 $ sudo chmod +x backup_sapl31_docker.sh
 
+```bash
 # Execute o script com o comando abaixo:
 $ sudo sh backup_sapl31_docker.sh
 
