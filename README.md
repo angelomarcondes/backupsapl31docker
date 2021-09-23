@@ -4,6 +4,7 @@ O objetivo deste projeto é oferecer scripts para o backup e a restauração dos
 
 ### Features
 - [x] Script de backup
+- [ ] Agendamento do script 
 - [ ] Script de restore
 - [ ] Teste de backup
 ### Pré-requisitos
