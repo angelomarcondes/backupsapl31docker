@@ -1,24 +1,22 @@
-#### INICIO DO SCRITP #####
-#!/bin/bash
-#  Script para backup das ferramentas SAAP, SAPl e  Portal Modelo
-#
 # Criador:Angelo Marcondes de Oliveira Neto
 #         angelomarcondes@gmail.com
 # Licença : GNU GPL
 # Dependencias: tar, bzip2, gzip, zip, gunzip, bunzip2, unzip, unrar
-##### Parametros#########
-# Cria variavel datahora para registro no log
-datahora = date
+#### Variaveis do usuário ###
+# Informe abaixo e depois do sinal de igual, o caminho da pasta de destino do seu backup, sem a barra no final
+# Exemplo /home/administrador/backup
+pasta=/home/sapladmin/backup
+
+### Variáveis do script não altere ###
+# Cria variavel datahora para registro do log
+datahora=`date`
 #Cria um nome para a pasta utilizando a data
 dt=`date | cut -f-1 | sed  -e 's/ //g' | sed -e 's/://g'`
-##### Variáveis #####
-#Caminho da pasta principal onde será gravado o backup
-destino1=/home/sapladmin/backup/$dt
-#Caminho de Log
-destino2=/home/sapladmin/backup
+# Cria o o caminho de destino de destino de backup
+destino1=/$pasta//$dt
 
-##### ROTINAS DOI BACKUP #####
-#Verificando a existencia da pasta
+### INICO DA MAGIA ###
+#Verificando a existencia da pasta de destino
 if test -d $destino1
 then
    echo $destino1 DIRETORIO EXISTE !
@@ -28,13 +26,17 @@ else
 fi
 
 # Regitra o inicio do backup no log
-echo "$datahora - Inicio do backup $destino1" >> $destino2/bkp.log# Extraindo cópia do banco de dados
-sudo docker exec -it postgres bash -c 'pg_dump -U sapl -d sapl -Fc -v > /tmp/postgres.backup' >> $destino2/bkp.log
+sudo echo "$datahora - Inicio do backup!" >> $pasta/bkp.log
+# Extraindo cópia do banco de dados
+sudo docker exec -it postgres bash -c 'pg_dump -U sapl -d sapl -Fc -v > /tmp/postgres.backup' >> $pasta/bkp.log
 # Copiando extração para pasta de destino
-sudo docker cp postgres:/tmp/postgres.backup $destino1 >> $destino2/bkp.log
+sudo docker cp postgres:/tmp/postgres.backup $destino1 >> $pasta/bkp.log
 # Extraindo cópia da pasta media
-sudo docker exec -it sapl bash -c 'cd /var/interlegis/sapl && tar czvf media.tar.gz ./media && ls -lah media.tar.gz' >> $destino2/bkp.log
+sudo docker exec -it sapl bash -c 'cd /var/interlegis/sapl && tar czvf media.tar.gz ./media && ls -lah media.tar.gz' >> $pasta/bkp.log
 # Copiando extração para pasta de destino
-sudo docker cp sapl:/var/interlegis/sapl/media.tar.gz $destino1 >> $destino2/bkp.log
+sudo docker cp sapl:/var/interlegis/sapl/media.tar.gz $destino1 >> $pasta/bkp.log
+# Registra o fim do backup no log
+sudo echo "$datahora - Fim do backup!" >> $pasta/bkp.log
 
 
+### FIM DA MAGIA ###
