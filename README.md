@@ -1,4 +1,4 @@
-# Script para backup e restore do SAPL 3.1 instalado sobre container docker
+# Scripts para backup e restore do SAPL 3.1 instalado sobre container docker
 ## Descrição do Projeto
 O objetivo deste projeto é oferecer scripts para o backup e a restauração dos dados do SAPL 3.1, instalado sobre conteiner docker. E possibilitar o estimulo da geração frequente de backups como forma de preservar os dados ao longo do tempo.
 
@@ -11,13 +11,13 @@ O objetivo deste projeto é oferecer scripts para o backup e a restauração dos
 * Antes de rodar o script, edite o mesmo e informe a variavel pasta
 * Tenha certeza que o usuário tenha permissão de escrita na pasta
 
-### Rodando o script
+### Rodando o script do backup
 ```bash
-# Dê permissão de execução ao script 
+# Dê permissão de execução ao script (faça apenas uma vez)
 $ sudo chmod +x backup_sapl31_docker.sh
 ```
 ```bash
-# Execute o script com o comando abaixo:
+# Execute o script com o comando abaixo, sempre que quiser gerar um backup novo
 $ sudo sh backup_sapl31_docker.sh
 ```
 ### Contribuições
