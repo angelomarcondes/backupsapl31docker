@@ -5,7 +5,7 @@
 #### Variaveis do usuário ###
 # Informe abaixo e depois do sinal de igual, o caminho da pasta de destino do seu backup, sem a barra no final
 # Exemplo /home/administrador/backup
-origem=/home/usuario/restoresapl
+origem=~/backupsapl31docker/restaura
 
 ### Variáveis do script não altere ###
 # Cria variavel datahora para registro do log
