@@ -50,5 +50,13 @@ origem=/home/usuario/restoresapl
 
 # Parar o conteiner do SAPL
 sudo docker stop sapl
+# Apaga o bando de dados "sapl" do container postgres
+sudo docker exec -it postgres psql -U sapl -d postgres -c "DROP DATABASE sapl;"
+# Cria o banco de dados "sapl" vaizio, para receber os dados do backup
+sudo docker exec -it postgres psql -U sapl -d postgres -c "CREATE DATABASE sapl;"
+# Copia a cópia do banco de dados para dento do container
+sudo docker cp $origem/sapl.backup postgres:/tmp/sapl.backup
+# Restaura a cópia do banco de dados
+sudo docker exec -it postgres bash -c 'pg_restore -U sapl -d sapl /tmp/sapl.backup'
 
 ### FIM DA MAGIA ###
