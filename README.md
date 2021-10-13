@@ -14,7 +14,8 @@ O objetivo deste projeto é oferecer scripts para o backup e a restauração dos
 ### Rodando o script do backup
 ``` bash 
 # Utilizando seu editor de textos favorito, abra o script e edite a variável 
-pasta informando o local onde serão armazenados os arquivos de backup. com por exemplo
+# pasta informando o local onde serão armazenados os arquivos de backup. Como por exemplo:
+
 pasta=/home/administrador/backupsapl
 
 ```
