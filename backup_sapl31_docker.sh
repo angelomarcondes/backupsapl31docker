@@ -13,7 +13,7 @@ datahora=`date`
 #Cria um nome para a pasta utilizando a data
 dt=`date | cut -f-1 | sed  -e 's/ //g' | sed -e 's/://g'`
 # Cria o o caminho de destino de destino de backup
-destino1=/$pasta//$dt
+destino1=/$pasta/$dt
 
 ### INICO DA MAGIA ###
 #Verificando a existencia da pasta de destino
