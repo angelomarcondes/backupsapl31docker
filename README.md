@@ -21,20 +21,18 @@ Entre na pasta, digitando o comando no terminal:
 ``` bash
 cd saplbackup31docker
 ```
-
-``` bash 
 Utilizando seu editor de textos favorito, abra o script e edite a variável 
 pasta informando o local onde serão armazenados os arquivos de backup. Como por exemplo:
-
+``` bash 
 pasta=/home/usuario/backupsapl31
 ```
 
 ```bash
-# Dê permissão de execução ao script (faça apenas uma vez)
+# Dê permissão de execução ao script (faça apenas uma vez).
 $ sudo chmod +x backup_sapl31_docker.sh
 ```
 ```bash
-# Execute o script com o comando abaixo, sempre que quiser gerar um backup novo
+# Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
 $ sudo sh backup_sapl31_docker.sh
 ```
 ### Contribuições
