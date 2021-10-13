@@ -8,17 +8,27 @@ O objetivo deste projeto é oferecer scripts para o backup e a restauração dos
 - [ ] Script de restore
 - [ ] Teste de backup
 ### Pré-requisitos
-* Antes de rodar o script, edite o mesmo e informe a variavel pasta
-* Tenha certeza que o usuário tenha permissão de escrita na pasta
+* Tenha o git instalado;
+* Antes de rodar o script, edite o mesmo e informe a variavel pasta;
+* Tenha certeza que o usuário tenha permissão de escrita na pasta;
 
 ### Rodando o script do backup
-``` bash 
-# Utilizando seu editor de textos favorito, abra o script e edite a variável 
-# pasta informando o local onde serão armazenados os arquivos de backup. Como por exemplo:
-
-pasta=/home/administrador/backupsapl
-
+Clone este respositório, digitando o comando no terminal:
+```bash
+git clone https://github.com/angelomarcondes/backupsapl31docker
 ```
+Entre na pasta, digitando o comando no terminal:
+``` bash
+cd saplbackup31docker
+```
+
+``` bash 
+Utilizando seu editor de textos favorito, abra o script e edite a variável 
+pasta informando o local onde serão armazenados os arquivos de backup. Como por exemplo:
+
+pasta=/home/usuario/backupsapl31
+```
+
 ```bash
 # Dê permissão de execução ao script (faça apenas uma vez)
 $ sudo chmod +x backup_sapl31_docker.sh
