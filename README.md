@@ -29,11 +29,11 @@ pasta=/home/usuario/backupsapl31
 
 ```bash
 # Dê permissão de execução ao script (faça apenas uma vez).
-$ sudo chmod +x backup_sapl31_docker.sh
+sudo chmod +x backup_sapl31_docker.sh
 ```
 ```bash
 # Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
-$ sudo sh backup_sapl31_docker.sh
+sudo sh backup_sapl31_docker.sh
 ```
 ### Contribuições
 Este script foi possível graças a:
