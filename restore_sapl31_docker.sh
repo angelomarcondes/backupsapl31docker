@@ -59,4 +59,8 @@ sudo docker cp $origem/saplsql.backup postgres:/tmp/saplsql.backup
 # Restaura a cópia do banco de dados
 sudo docker exec -it postgres bash -c 'pg_restore -U sapl -d sapl --verbose /tmp/saplsql.backup'
 
+
+# Reinicia o container do SAPL
+sudo docker start sapl
+
 ### FIM DA MAGIA ###
