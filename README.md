@@ -27,12 +27,15 @@ pasta informando o local onde serão armazenados os arquivos de backup. Como por
 pasta=/home/usuario/backupsapl31
 ```
 
+Dê permissão de execução ao script (faça apenas uma vez).
+
 ```bash
-# Dê permissão de execução ao script (faça apenas uma vez).
 sudo chmod +x backup_sapl31_docker.sh
 ```
+
+Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
+
 ```bash
-# Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
 sudo sh backup_sapl31_docker.sh
 ```
 ### Contribuições
