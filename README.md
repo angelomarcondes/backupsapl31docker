@@ -12,6 +12,12 @@ O objetivo deste projeto é oferecer scripts para o backup e a restauração dos
 * Tenha certeza que o usuário tenha permissão de escrita na pasta
 
 ### Rodando o script do backup
+``` bash 
+# Utilizando seu editor de textos favorito, abra o script e edite a variável pasta informando o local onde serão armazenados os arquivos de backup. com por exemplo
+$ pasta=/home/administrador/backupsapl
+
+```
+
 ```bash
 # Dê permissão de execução ao script (faça apenas uma vez)
 $ sudo chmod +x backup_sapl31_docker.sh
