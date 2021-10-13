@@ -57,6 +57,6 @@ sudo docker exec -it postgres psql -U sapl -d postgres -c "CREATE DATABASE sapl;
 # Copia a cópia do banco de dados para dento do container
 sudo docker cp $origem/saplsql.backup postgres:/tmp/saplsql.backup
 # Restaura a cópia do banco de dados
-sudo docker exec -it postgres bash -c 'pg_restore -U sapl -d sapl /tmp/saplsql.backup'
+sudo docker exec -it postgres bash -c 'pg_restore -U sapl -d sapl --verbose /tmp/saplsql.backup'
 
 ### FIM DA MAGIA ###
