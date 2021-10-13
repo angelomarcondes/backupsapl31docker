@@ -13,10 +13,20 @@ datahora=`date`
 #Cria um nome para a pasta utilizando a data
 dt=`date | cut -f-1 | sed  -e 's/ //g' | sed -e 's/://g'`
 # Cria o o caminho de destino de destino de backup
-destino1=/$pasta/$dt
+destino1=$pasta/$dt
 
 ### INICO DA MAGIA ###
-#Verificando a existencia da pasta de destino
+#Verificando a existencia da pasta de destino dos backups
+if test -d $pasta
+then
+   echo $pasta DIRETORIO EXISTE !
+else
+   echo Criando Diretorio ...
+   mkdir $pasta
+fi
+
+
+#Verificando a existencia da pasta de destino do backup
 if test -d $destino1
 then
    echo $destino1 DIRETORIO EXISTE !
