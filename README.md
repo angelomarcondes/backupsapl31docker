@@ -19,7 +19,7 @@ git clone https://github.com/angelomarcondes/backupsapl31docker
 ```
 Entre na pasta, digitando o comando no terminal:
 ``` bash
-cd saplbackup31docker
+cd backupsapl31docker
 ```
 Utilizando seu editor de textos favorito, abra o script e edite a variável 
 pasta informando o local onde serão armazenados os arquivos de backup. Como por exemplo:
