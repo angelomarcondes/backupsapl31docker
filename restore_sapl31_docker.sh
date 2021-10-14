@@ -15,14 +15,14 @@ sudo docker exec -it postgres psql -U sapl -d postgres -c "DROP DATABASE sapl;"
 sudo docker exec -it postgres psql -U sapl -d postgres -c "CREATE DATABASE sapl;"
 # Copia a cópia do banco de dados para dento do container
 sudo docker cp $origem/saplsql.backup postgres:/tmp/saplsql.backup
-# Reinicia o container do SAPL
-sudo docker start sapl
 # Copia a cópia da pasta media
-sudo docker cp $origem/media.tar.gz sapl:/tmp/
+sudo docker cp $origem/saplmedia.tar.gz sapl:/tmp/
 # Restaura a cópia do banco de dados
 sudo docker exec -it postgres bash -c 'pg_restore -U sapl -d sapl --verbose /tmp/saplsql.backup'
+# Reinicia o container do SAPL
+sudo docker start sapl
 # Restaura a cópia da pasta media
-sudo docker exec -it sapl bash -c 'tar -vxzf /tmp/sapl.tar.gz '
+sudo docker exec -it sapl bash -c 'tar -vxzf /tmp/saplmedia.tar.gz '
 # Adicionar o rebuild
 #sudo docker exec -it sapl bash -c 'manage.py rebuild_index' #confirmar com o yes (como passar isso pelo comando?
 

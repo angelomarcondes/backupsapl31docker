@@ -44,7 +44,7 @@ sudo docker cp postgres:/tmp/saplsql.backup $destino1 >> $pasta/bkp.log
 # Extraindo cópia da pasta media
 sudo docker exec -it sapl bash -c 'cd /var/interlegis/sapl && tar czvf media.tar.gz ./media && ls -lah media.tar.gz' >> $pasta/bkp.log
 # Copiando extração para pasta de destino
-sudo docker cp sapl:/var/interlegis/sapl/media.tar.gz $destino1 >> $pasta/bkp.log
+sudo docker cp sapl:/var/interlegis/sapl/saplmedia.tar.gz $destino1 >> $pasta/bkp.log
 # Registra o fim do backup no log
 sudo echo "$datahora - Fim do backup!" >> $pasta/bkp.log
 
