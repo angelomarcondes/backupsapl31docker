@@ -18,10 +18,7 @@ Clone este respositório na sua pasta de usuário (/home/SeuUsuário), digitando
 ```bash
 git clone https://github.com/angelomarcondes/backupsapl31docker
 ```
-Entre na pasta, digitando o comando no terminal:
-``` bash
-cd backupsapl31docker
-```
+
 Dê permissão de execução ao script (faça apenas uma vez).
 
 ```bash
