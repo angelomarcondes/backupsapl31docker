@@ -38,6 +38,11 @@ Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
 ```bash
 sudo sh backup_sapl31_docker.sh
 ```
+
+### Rodando o script de restaunração
+
+xxxx
+
 ### Contribuições
 Este script foi possível graças a:
 * discussão da lista gitec postada em (https://colab.interlegis.leg.br/archives/thread/gitec/como-fazer-backup-sapl-31-docker)
