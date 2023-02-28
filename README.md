@@ -28,7 +28,7 @@ sudo chmod +x ~/backupsapl31docker/backup_sapl31_docker.sh
 Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
 
 ```bash
-sudo sh ./backupsapl31docker/backup_sapl31_docker.sh
+sh ~/backupsapl31docker/backup_sapl31_docker.sh
 ```
 
 ### Rodando o script de restauração
