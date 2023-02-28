@@ -31,19 +31,16 @@ Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
 sudo sh ./backupsapl31docker/backup_sapl31_docker.sh
 ```
 
-### Rodando o script de restaunração
+### Rodando o script de restauração
 
-Clone este respositório, digitando o comando no terminal PREFENCIAL:
-```bash
-git clone https://github.com/angelomarcondes/backupsapl31docker
-```
-Entre na pasta, digitando o comando no terminal:
-``` bash
-cd backupsapl31docker
-```
 Copie os arquivos de banco de dados (saplsql.backup) e arquivos (saplmedia.tar.gz) que serão restaurados para a pasta ~/backupsapl31docker/restaura/, utilizando comando abaixo:
 ```
 cp saplsql.backup saplmedia.tar.gz ~/backupsapl31docker/restaura/
+```
+Execute o script com o comando abaixo, sempre que quiser restaurar um backup.
+
+```bash
+sudo sh ./backupsapl31docker/restore_sapl31_docker.sh
 ```
 
 
