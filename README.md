@@ -8,12 +8,13 @@ O objetivo deste projeto é oferecer scripts para o backup e a restauração dos
 - [ ] Script de restore
 - [ ] Teste de backup
 ### Pré-requisitos
-* Tenha o git instalado;
+* Git instalado;
+* SAPL 3.1 já instalado e em execução;
 * Antes de rodar o script, edite o mesmo e informe a variavel pasta;
 * Tenha certeza que o usuário tenha permissão de escrita na pasta;
 
 ### Rodando o script do backup
-Clone este respositório, digitando o comando no terminal:
+Clone este respositório na sua pasta de usuário (/home/SeuUsuário), digitando o comando no terminal:
 ```bash
 git clone https://github.com/angelomarcondes/backupsapl31docker
 ```
@@ -21,27 +22,35 @@ Entre na pasta, digitando o comando no terminal:
 ``` bash
 cd backupsapl31docker
 ```
-Utilizando seu editor de textos favorito, abra o script e edite a variável 
-pasta informando o local onde serão armazenados os arquivos de backup. Como por exemplo:
-``` bash 
-pasta=/home/usuario/backupsapl31
-```
-
 Dê permissão de execução ao script (faça apenas uma vez).
 
 ```bash
-sudo chmod +x backup_sapl31_docker.sh
+sudo chmod +x ~/backupsapl31docker/backup_sapl31_docker.sh
 ```
 
 Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
 
 ```bash
-sudo sh backup_sapl31_docker.sh
+sudo sh ./backupsapl31docker/backup_sapl31_docker.sh
 ```
 
 ### Rodando o script de restaunração
 
-xxxx
+Clone este respositório, digitando o comando no terminal PREFENCIAL:
+```bash
+git clone https://github.com/angelomarcondes/backupsapl31docker
+```
+Entre na pasta, digitando o comando no terminal:
+``` bash
+cd backupsapl31docker
+```
+Copie os arquivos de banco de dados (saplsql.backup) e arquivos (saplmedia.tar.gz) que serão restaurados para a pasta ~/backupsapl31docker/restaura/, utilizando comando abaixo:
+```
+cp saplsql.backup saplmedia.tar.gz ~/backupsapl31docker/restaura/
+```
+
+
+
 
 ### Contribuições
 Este script foi possível graças a:
