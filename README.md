@@ -40,7 +40,7 @@ cp saplsql.backup saplmedia.tar.gz ~/backupsapl31docker/restaura/
 Execute o script com o comando abaixo, sempre que quiser restaurar um backup.
 
 ```bash
-./backupsapl31docker/restore_sapl31_docker.sh
+sh /backupsapl31docker/restore_sapl31_docker.sh
 ```
 
 
