@@ -22,7 +22,7 @@ sudo docker exec -it postgres bash -c 'pg_restore -U sapl -d sapl --verbose /tmp
 # Reinicia o container do SAPL
 sudo docker start sapl
 # Restaura a cópia da pasta media
-sudo docker exec -it sapl bash -c 'tar -vxzf /tmp/saplmedia.tar.gz '
+sudo docker exec -it sapl bash -c 'tar -vxzf /tmp/saplmedia.tar.gz -C / '
 # Adicionar o rebuild
 #sudo docker exec -it sapl bash -c 'manage.py rebuild_index' #confirmar com o yes (como passar isso pelo comando?
 
