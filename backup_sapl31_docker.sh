@@ -42,7 +42,7 @@ sudo docker exec -it postgres bash -c 'pg_dump -U sapl -d sapl -Fc -v > /tmp/sap
 # Copiando extração para pasta de destino
 sudo docker cp postgres:/tmp/saplsql.backup $destino1 >> $pasta/bkp.log
 # Extraindo cópia da pasta media
-sudo docker exec -it sapl bash -c 'cd /var/interlegis/sapl && tar -czvf /saplmedia.tar.gz /var/interlegis/sapl/media && ls -lah saplmedia.tar.gz' >> $pasta/bkp.log
+sudo docker exec -it sapl bash -c 'cd /var/interlegis/sapl && tar -czvf saplmedia.tar.gz /var/interlegis/sapl/media && ls -lah saplmedia.tar.gz' >> $pasta/bkp.log
 # Copiando extração para pasta de destino
 sudo docker cp sapl:/var/interlegis/sapl/saplmedia.tar.gz $destino1 >> $pasta/bkp.log
 # Apaga o arquivo  dentro do container sapl  copiado
