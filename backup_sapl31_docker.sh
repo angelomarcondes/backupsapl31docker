@@ -37,15 +37,17 @@ fi
 
 # Regitra o inicio do backup no log
 sudo echo "$datahora - Inicio do backup!" >> $pasta/bkp.log
-# Extraindo cópia do banco de dados
+# Gera cópia do banco de dados
 sudo docker exec -it postgres bash -c 'pg_dump -U sapl -d sapl -Fc -v > /tmp/saplsql.backup' >> $pasta/bkp.log
-# Copiando extração para pasta de destino
+# Copia o arquivo para pasta de destino
 sudo docker cp postgres:/tmp/saplsql.backup $destino1 >> $pasta/bkp.log
-# Extraindo cópia da pasta media
+# Apaga o arquivo de copia do banco no container
+sudo docker exec postgres bash -c 'rm /tmp/saplsql.backup'
+# Gera cópia da pasta media
 sudo docker exec -it sapl bash -c 'cd /var/interlegis/sapl && tar -czvf saplmedia.tar.gz /var/interlegis/sapl/media && ls -lah saplmedia.tar.gz' >> $pasta/bkp.log
-# Copiando extração para pasta de destino
+# Copia arquivo para pasta de destino
 sudo docker cp sapl:/var/interlegis/sapl/saplmedia.tar.gz $destino1 >> $pasta/bkp.log
-# Apaga o arquivo  dentro do container sapl  copiado
+# Apaga o arquivo no container 
 sudo docker exec -it sapl bash -c 'rm /var/interlegis/sapl/saplmedia.tar.gz'
 # Registra o fim do backup no log
 sudo echo "$datahora - Fim do backup!" >> $pasta/bkp.log
