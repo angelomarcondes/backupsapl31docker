@@ -36,18 +36,18 @@ else
 fi
 
 # Regitra o inicio do backup no log
-sudo echo "$datahora - Inicio do backup!" >> $pasta/bkp.log
+echo "$datahora - Inicio do backup!" >> $pasta/bkp.log 2>&1
 # Gera cópia do banco de dados
-sudo docker exec -it postgres bash -c 'pg_dump -U sapl -d sapl -Fc -v > /tmp/saplsql.backup' >> $pasta/bkp.log
+docker exec postgres bash -c 'pg_dump -U sapl -d sapl -Fc -v > /tmp/saplsql.backup' >> $pasta/bkp.log 2>&1
 # Copia o arquivo para pasta de destino
-sudo docker cp postgres:/tmp/saplsql.backup $destino1 >> $pasta/bkp.log
+docker cp postgres:/tmp/saplsql.backup $destino1 >> $pasta/bkp.log 2>&1
 # Apaga o arquivo de copia do banco no container
-sudo docker exec postgres bash -c 'rm /tmp/saplsql.backup'
+docker exec postgres bash -c 'rm /tmp/saplsql.backup' >> $pasta/bkp.log 2>&1
 # Gera cópia da pasta media
-sudo docker exec -it sapl bash -c 'cd /var/interlegis/sapl && tar -czvf saplmedia.tar.gz /var/interlegis/sapl/media && ls -lah saplmedia.tar.gz' >> $pasta/bkp.log
+docker exec sapl bash -c 'cd /var/interlegis/sapl && tar -czvf saplmedia.tar.gz /var/interlegis/sapl/media && ls -lah saplmedia.tar.gz' >> $pasta/bkp.log 2>&1
 # Copia arquivo para pasta de destino
-sudo docker cp sapl:/var/interlegis/sapl/saplmedia.tar.gz $destino1 >> $pasta/bkp.log
+docker cp sapl:/var/interlegis/sapl/saplmedia.tar.gz $destino1 >> $pasta/bkp.log 2>&1
 # Apaga o arquivo no container 
-sudo docker exec -it sapl bash -c 'rm /var/interlegis/sapl/saplmedia.tar.gz'
+docker exec sapl bash -c 'rm /var/interlegis/sapl/saplmedia.tar.gz' >> $pasta/bkp.log 2>&1
 # Registra o fim do backup no log
-sudo echo "$datahora - Fim do backup!" >> $pasta/bkp.log
+sudo echo "$datahora - Fim do backup!" >> $pasta/bkp.log >> $pasta/bkp.log 2>&1
