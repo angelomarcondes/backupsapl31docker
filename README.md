@@ -25,7 +25,7 @@ Dê permissão de execução ao script (faça apenas uma vez).
 sudo chmod +x ~/backupsapl31docker/backup_sapl31_docker.sh
 ```
 
-Execute o script com o comando abaixo, sempre que quiser gerar um backup novo.
+Execute o script com o comando abaixo usando o usuário root (ou dê permissão de execução do docker ao seu usuário) , sempre que quiser gerar um backup novo.
 
 ```bash
 sh ~/backupsapl31docker/backup_sapl31_docker.sh
